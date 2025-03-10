@@ -1,3 +1,5 @@
+// 洗牌算法
+
 function shuffle(arr) {
     const len = arr.length
     let j = len-1

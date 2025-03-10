@@ -1,4 +1,4 @@
-const resolvePromise = (promise, x, resolve, reject, status) => {
+const resolvePromise = (promise, x, resolve, reject) => {
     if(promise === x) {
         // 避免无限循环
         return reject('error')
@@ -16,7 +16,7 @@ const resolvePromise = (promise, x, resolve, reject, status) => {
                     if(called) return
                     called = true
 
-                    resolvePromise(promise, y, resolve, reject, status)
+                    resolvePromise(promise, y, resolve, reject)
                 }, (e) => {
                     if(called) return
                     called = true
@@ -25,13 +25,7 @@ const resolvePromise = (promise, x, resolve, reject, status) => {
                 })
             }
             else {
-                console.log('xxx', this.status)
-                if(status === 'rejected') {
-                    reject(x)
-                }
-                else {
-                    resove(x)
-                }
+                resove(x)
             }
         }
         catch(e) {
