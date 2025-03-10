@@ -52,3 +52,46 @@ https://cn.vite.dev/guide/dep-pre-bundling.html#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%B
 支持 monorepo
 
 https://zhuanlan.zhihu.com/p/419399115
+
+# 8. 不能触发冒泡的事件
+
+scroll resize focus blur mouseenter mouseleave meidia 事件
+
+# 9. Proxy 的限制
+
+1. 只能监听直接代理的属性，不能嵌套监听
+2. 一些内置对象不能监听
+3. 可能得性能损耗
+
+# 10. 前端跨页面通信
+
+同源策略
+
+1. BroadcastChannel
+2. Service Worker (多页面共享 Service Worker)
+3. Local Storage storage event
+4. indexDb | cookie
+   非同源
+   iframe 指定 origin 忽略同源限制与父页面通信
+
+# 11. 内存泄露场景
+
+1.  闭包
+2.  全局变量
+3.  分离的 dom
+4.  遗忘的定时器
+5.  console.log
+    排查： chrome devtool 内存快照和动态分配图
+
+# 12. 安全
+
+可以执行脚本 script；javascript: \*\*; onClick; eval
+XSS: 防注入(URL | 数据库)：输入验证，WAF 阻挡； 防执行: csp，不用 innerHtml,纯前端渲染，转译脚本标识；防影响：避免关键数据被获取 cookie：httpOnly， 利用工具检测
+csrf：不用 cookie 登录，token(cookie 中的 token 与参数中的是否一致)， 判断源 referer & origin
+sql 注入
+ddos
+
+# 13. Service Worker 缓存
+
+skipWaiting & claim and updatefound event 弹窗通知 刷新
+更新：https://juejin.cn/post/7330388563790561317 fetch 时机： 资源文件版本 hash 或缓存标识
