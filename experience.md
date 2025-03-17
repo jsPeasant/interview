@@ -28,8 +28,16 @@
 发起请求
 读取响应
 解析 html-》 dom 与 cssom -> 渲染树 -》Layout 树-》 Gpu 绘制显示
+![浏览器优化](image-1.png)
 
-![alt text](urlToShow.png)
+css 性能
+![alt text](image-2.png)
+![alt text](image-3.png)
+
+![浏览器输入url 发生了什么](urlToShow.png)
+
+![proxy  跨域](image-4.png)
+
 
 # 5. tps/qps
 
@@ -95,3 +103,10 @@ ddos
 
 skipWaiting & claim and updatefound event 弹窗通知 刷新
 更新：https://juejin.cn/post/7330388563790561317 fetch 时机： 资源文件版本 hash 或缓存标识
+
+# 14 Node 
+![stream](image-5.png) pipe传输  读取或写入 大型文件
+
+![buffer](image-6.png)
+
+![event loop](image-7.png)![event loop](image-8.png)![event loop](image-9.png)
